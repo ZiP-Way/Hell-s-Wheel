@@ -51,6 +51,7 @@ MonoBehaviour:
   moveDownSpeed: 5
   jumpForce: 5
   gameController: {fileID: 0}
+  playerSide: 0
 --- !u!54 &486391808
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Side { Left, Midle, Right }
+public enum Side { Left, Middle, Right }
 
 public class WheelController : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class WheelController : MonoBehaviour
     [SerializeField] private GameObject gameController;
 
     private Rigidbody rb;
-    private Side playerSide;
+    public Side playerSide;
 
     private float codeTimer;
     private float pointToMove;
@@ -29,13 +29,7 @@ public class WheelController : MonoBehaviour
         rb          = GetComponent<Rigidbody>();
         playerSide  = Side.Right;
     }
-    private void MoveTo()
-    {
-        transform.position = new Vector3(
-            Mathf.Lerp(transform.position.x, pointToMove, 0.2f), 
-            transform.position.y, 
-            transform.position.z);
-    }
+    
     private void FixedUpdate()
     {
         if (isChangingSide)
@@ -64,9 +58,9 @@ public class WheelController : MonoBehaviour
         if (playerSide == Side.Left)
         {
             pointToMove = -0.1f;
-            playerSide = Side.Midle;
+            playerSide = Side.Middle;
         }
-        else if (playerSide == Side.Midle)
+        else if (playerSide == Side.Middle)
         {
             pointToMove = 1.4f;
             playerSide = Side.Right;
@@ -80,7 +74,7 @@ public class WheelController : MonoBehaviour
 
     public void MoveLeft()
     {
-        if (playerSide == Side.Midle)
+        if (playerSide == Side.Middle)
         {
             pointToMove = -1.6f;
             playerSide = Side.Left;
@@ -88,7 +82,7 @@ public class WheelController : MonoBehaviour
         else if (playerSide == Side.Right)
         {
             pointToMove = -0.1f;
-            playerSide = Side.Midle;
+            playerSide = Side.Middle;
         }
         else if (playerSide == Side.Left)
         {
@@ -116,6 +110,14 @@ public class WheelController : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, 0.8f);
+    }
+
+    private void MoveTo()
+    {
+        transform.position = new Vector3(
+            Mathf.Lerp(transform.position.x, pointToMove, 0.2f),
+            transform.position.y,
+            transform.position.z);
     }
 
     private void OnCollisionEnter(Collision collision)

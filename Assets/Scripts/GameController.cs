@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        Screen.fullScreen = false;
         Time.timeScale = 1;
     }
     public void OnEnableLoseMenu()
