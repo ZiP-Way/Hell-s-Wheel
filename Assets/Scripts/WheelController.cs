@@ -6,7 +6,8 @@ public enum Side { Left, Middle, Right }
 
 public class WheelController : MonoBehaviour
 {
-    // -1.6 -0.1 1.4
+    [HideInInspector] public Side playerSide; // -1.6 -0.1 1.4
+
     [SerializeField] private float rotateSpeed = 0;
     [SerializeField] private float moveForwardSpeed = 0;
     [SerializeField] private float moveDownSpeed = 0;
@@ -15,7 +16,6 @@ public class WheelController : MonoBehaviour
     [SerializeField] private GameObject gameController;
 
     private Rigidbody rb;
-    public Side playerSide;
 
     private float codeTimer;
     private float pointToMove;

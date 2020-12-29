@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2974692964069623161}
-  - component: {fileID: 2974692964069623160}
   - component: {fileID: 486391808}
   - component: {fileID: 486391811}
+  - component: {fileID: 2974692964069623160}
+  - component: {fileID: 486391812}
   m_Layer: 0
   m_Name: Wheel
   m_TagString: Untagged
@@ -34,24 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &2974692964069623160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2974692964069620358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2935b50136f34be43b97873e93f9f822, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 10
-  moveForwardSpeed: 0.1
-  moveDownSpeed: 5
-  jumpForce: 5
-  gameController: {fileID: 0}
-  playerSide: 0
 --- !u!54 &486391808
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -82,6 +65,37 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0.06}
+--- !u!114 &2974692964069623160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2974692964069620358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2935b50136f34be43b97873e93f9f822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSide: 0
+  rotateSpeed: 10
+  moveForwardSpeed: 0.1
+  moveDownSpeed: 5
+  jumpForce: 5
+  gameController: {fileID: 0}
+--- !u!114 &486391812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2974692964069620358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ba2cb262ad32747bd9bb46a797603f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
 --- !u!1001 &2974692962626118439
 PrefabInstance:
   m_ObjectHideFlags: 0

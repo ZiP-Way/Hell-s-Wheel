@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class GameController : MonoBehaviour
 {
     [SerializeField] private GameObject loseMenu;
+    [SerializeField] private Text score;
 
     private void Start()
     {
@@ -15,5 +18,10 @@ public class GameController : MonoBehaviour
     {
         loseMenu.SetActive(true);
         Time.timeScale = 0;
+    }
+
+    public void ScoreUpdate(int amountOfCoins)
+    {
+        score.text = amountOfCoins.ToString();
     }
 }
