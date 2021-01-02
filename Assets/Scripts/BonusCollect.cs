@@ -3,7 +3,6 @@
 public class BonusCollect : MonoBehaviour
 {
     [SerializeField] private GameObject gameController;
-
     private int coinCount = 0;
 
     private void OnTriggerEnter(Collider other)
