@@ -14,6 +14,7 @@ public class WheelController : MonoBehaviour
     [SerializeField] private float jumpForce = 0;
 
     [SerializeField] private GameObject gameController;
+    [SerializeField] private GameObject wheelBody;
 
     private Rigidbody rb;
 
@@ -47,10 +48,10 @@ public class WheelController : MonoBehaviour
 
         if (IsGrounded())
         {
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z + moveForwardSpeed);
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, moveForwardSpeed);
         }
 
-        transform.Rotate(Vector3.forward * rotateSpeed);
+        wheelBody.transform.Rotate(Vector3.forward * rotateSpeed);
     }
 
     public void MoveRight()
@@ -95,7 +96,7 @@ public class WheelController : MonoBehaviour
     {
         if (IsGrounded())
         {
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y + jumpForce, rb.velocity.z);
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
         }
     }
 
