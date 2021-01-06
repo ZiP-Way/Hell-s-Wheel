@@ -6,8 +6,9 @@ TagManager:
   tags:
   - Road
   - Car
-  - CarFrontSide
   - Coin
+  - Magnet
+  - SpeedBoost
   layers:
   - Default
   - TransparentFX

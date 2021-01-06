@@ -10,5 +10,9 @@ public class ForwardBorder : LoseSystem
         {
             gameController.OnEnableLoseMenu();
         }
+        else if (other.CompareTag("Magnet"))
+        {
+
+        }
     }
 }

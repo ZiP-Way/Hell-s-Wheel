@@ -10,15 +10,15 @@ public class Camera : MonoBehaviour
     [SerializeField] private float cameraSpeed;
     private void FixedUpdate()
     {
-        if(player.GetComponent<WheelController>().playerSide == Side.Right)
+        if(player.GetComponent<WheelController>().PlayerSide == Side.Right)
         {
             transform.position = new Vector3(Mathf.Lerp(transform.position.x, 0.5f, cameraSpeed), transform.position.y, player.transform.position.z - 2.7f);
         }
-        else if(player.GetComponent<WheelController>().playerSide == Side.Left)
+        else if(player.GetComponent<WheelController>().PlayerSide == Side.Left)
         {
             transform.position = new Vector3(Mathf.Lerp(transform.position.x, -0.5f, cameraSpeed), transform.position.y, player.transform.position.z - 2.7f);
         }
-        else if (player.GetComponent<WheelController>().playerSide == Side.Middle)
+        else if (player.GetComponent<WheelController>().PlayerSide == Side.Middle)
         {
             transform.position = new Vector3(Mathf.Lerp(transform.position.x, -0.1f, cameraSpeed), transform.position.y, player.transform.position.z - 2.7f);
         }

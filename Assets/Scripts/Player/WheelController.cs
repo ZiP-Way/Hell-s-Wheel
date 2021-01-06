@@ -4,9 +4,12 @@ using UnityEngine;
 
 public enum Side { Left, Middle, Right }
 
+public enum PlayerBonus { Deffault, Magnet }
+
 public class WheelController : MonoBehaviour
 {
-    [HideInInspector] public Side playerSide; // -1.6 -0.1 1.4
+    [HideInInspector] public Side PlayerSide; // -1.6 -0.1 1.4
+    [HideInInspector] public PlayerBonus PlayerBonus;
 
     [SerializeField] private float rotateSpeed = 0;
     [SerializeField] private float moveForwardSpeed = 0;
@@ -28,7 +31,7 @@ public class WheelController : MonoBehaviour
         codeTimer   = 0.25f;
 
         rb          = GetComponent<Rigidbody>();
-        playerSide  = Side.Right;
+        PlayerSide  = Side.Right;
     }
     
     private void FixedUpdate()
@@ -56,17 +59,17 @@ public class WheelController : MonoBehaviour
 
     public void MoveRight()
     {
-        if (playerSide == Side.Left)
+        if (PlayerSide == Side.Left)
         {
             pointToMove = -0.1f;
-            playerSide = Side.Middle;
+            PlayerSide = Side.Middle;
         }
-        else if (playerSide == Side.Middle)
+        else if (PlayerSide == Side.Middle)
         {
             pointToMove = 1.4f;
-            playerSide = Side.Right;
+            PlayerSide = Side.Right;
         }
-        else if (playerSide == Side.Right)
+        else if (PlayerSide == Side.Right)
         {
             //...
         }
@@ -75,17 +78,17 @@ public class WheelController : MonoBehaviour
 
     public void MoveLeft()
     {
-        if (playerSide == Side.Middle)
+        if (PlayerSide == Side.Middle)
         {
             pointToMove = -1.6f;
-            playerSide = Side.Left;
+            PlayerSide = Side.Left;
         }
-        else if (playerSide == Side.Right)
+        else if (PlayerSide == Side.Right)
         {
             pointToMove = -0.1f;
-            playerSide = Side.Middle;
+            PlayerSide = Side.Middle;
         }
-        else if (playerSide == Side.Left)
+        else if (PlayerSide == Side.Left)
         {
             // ...
         }
@@ -119,13 +122,5 @@ public class WheelController : MonoBehaviour
             Mathf.Lerp(transform.position.x, pointToMove, 0.2f),
             transform.position.y,
             transform.position.z);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Car"))
-        {
-            gameController.GetComponent<GameController>().OnEnableLoseMenu();
-        }
     }
 }

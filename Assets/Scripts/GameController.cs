@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
         Screen.fullScreen = false;
         Time.timeScale = 1;
     }
+
     public void OnEnableLoseMenu()
     {
         loseMenu.SetActive(true);
@@ -24,4 +25,6 @@ public class GameController : MonoBehaviour
     {
         score.text = amountOfCoins.ToString();
     }
+
+
 }
