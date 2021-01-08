@@ -20,11 +20,6 @@ public class BonusController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void Start()
-    {
-        magnetCollider.SetActive(false);
-    }
-
     private void FixedUpdate()
     {
         if (magnetCollider.activeSelf)

@@ -8,6 +8,7 @@ public enum PlayerBonus { Deffault, Magnet }
 
 public class WheelController : MonoBehaviour
 {
+    // 2.65, 0.25, -2.15
     [HideInInspector] public Side PlayerSide; // -1.6 -0.1 1.4
     [HideInInspector] public PlayerBonus PlayerBonus;
 
@@ -19,6 +20,7 @@ public class WheelController : MonoBehaviour
     [SerializeField] private GameObject gameController;
     [SerializeField] private GameObject wheelBody;
 
+    private float[] sidePositionX = {2.65f, 0.25f, -2.15f }; // 0 = Right side, 1 = Middle side, 2 = Left side
     private Rigidbody rb;
 
     private float codeTimer;
@@ -28,7 +30,7 @@ public class WheelController : MonoBehaviour
 
     private void Start()
     {
-        codeTimer   = 0.25f;
+        codeTimer   = 1f;
 
         rb          = GetComponent<Rigidbody>();
         PlayerSide  = Side.Right;
@@ -44,7 +46,7 @@ public class WheelController : MonoBehaviour
             if (codeTimer < 0)
             {
                 isChangingSide = false;
-                codeTimer = 0.25f;
+                codeTimer = 1f;
                 transform.position = new Vector3(pointToMove, transform.position.y, transform.position.z);
             }
         }
@@ -61,18 +63,20 @@ public class WheelController : MonoBehaviour
     {
         if (PlayerSide == Side.Left)
         {
-            pointToMove = -0.1f;
+            pointToMove = sidePositionX[1];
             PlayerSide = Side.Middle;
         }
         else if (PlayerSide == Side.Middle)
         {
-            pointToMove = 1.4f;
+            pointToMove = sidePositionX[0];
             PlayerSide = Side.Right;
         }
         else if (PlayerSide == Side.Right)
         {
             //...
         }
+
+        codeTimer = 1f;
         isChangingSide = true;
     }
 
@@ -80,18 +84,20 @@ public class WheelController : MonoBehaviour
     {
         if (PlayerSide == Side.Middle)
         {
-            pointToMove = -1.6f;
+            pointToMove = sidePositionX[2];
             PlayerSide = Side.Left;
         }
         else if (PlayerSide == Side.Right)
         {
-            pointToMove = -0.1f;
+            pointToMove = sidePositionX[1];
             PlayerSide = Side.Middle;
         }
         else if (PlayerSide == Side.Left)
         {
             // ...
         }
+
+        codeTimer = 1f; 
         isChangingSide = true;
     }
 
@@ -119,7 +125,7 @@ public class WheelController : MonoBehaviour
     private void MoveTo()
     {
         transform.position = new Vector3(
-            Mathf.Lerp(transform.position.x, pointToMove, 0.2f),
+            Mathf.Lerp(transform.position.x, pointToMove, 0.1f),
             transform.position.y,
             transform.position.z);
     }

@@ -15,15 +15,15 @@ public class ObjectsController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position = new Vector3(0, 0, player.transform.position.z - 20);
+        transform.position = new Vector3(0, 0, player.transform.position.z - 30);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Road"))
         {
-            other.transform.position = new Vector3(0, 0, 10 * (amountOfRoadObjects - 1) + amountOfDistance);
-            amountOfDistance += 10;
+            other.transform.position = new Vector3(0, 0, 25 * amountOfRoadObjects + amountOfDistance);
+            amountOfDistance += 25;
         }
         else if (other.CompareTag("Car"))
         {
