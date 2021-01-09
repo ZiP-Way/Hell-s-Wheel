@@ -490,6 +490,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1495509935}
     m_Modifications:
+    - target: {fileID: 4006552447536075706, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4709702488789299673, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -537,6 +541,14 @@ PrefabInstance:
     - target: {fileID: 5338993003513998179, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
       propertyPath: m_Name
       value: Green fence (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338993003513998179, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338993003513998179, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
@@ -761,6 +773,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Truck#2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3484456362882386207, guid: b08dea899a5e02a478344d8dffc2a0a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4256066803756962725, guid: b08dea899a5e02a478344d8dffc2a0a9, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -803,6 +819,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4256066803756962725, guid: b08dea899a5e02a478344d8dffc2a0a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5608825939067089350, guid: b08dea899a5e02a478344d8dffc2a0a9, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -910,6 +930,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1495509935}
     m_Modifications:
+    - target: {fileID: 4006552447536075706, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4709702488789299673, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -957,6 +981,14 @@ PrefabInstance:
     - target: {fileID: 5338993003513998179, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
       propertyPath: m_Name
       value: Green fence (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338993003513998179, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338993003513998179, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
@@ -1046,6 +1078,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1495509935}
     m_Modifications:
+    - target: {fileID: 4006552447536075706, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4709702488789299673, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1093,6 +1129,14 @@ PrefabInstance:
     - target: {fileID: 5338993003513998179, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
       propertyPath: m_Name
       value: Green fence (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338993003513998179, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338993003513998179, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
@@ -1264,6 +1308,18 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1b84c7c402060514eb7c0cb129c5d186, type: 3}
       propertyPath: m_Name
       value: Bus#1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1b84c7c402060514eb7c0cb129c5d186, type: 3}
+      propertyPath: m_TagString
+      value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1b84c7c402060514eb7c0cb129c5d186, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 1b84c7c402060514eb7c0cb129c5d186, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b84c7c402060514eb7c0cb129c5d186, type: 3}
@@ -1486,8 +1542,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1544,7 +1600,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129684250}
   m_LocalRotation: {x: -0.5598026, y: -0.045213584, z: 0.030611895, w: -0.8268251}
-  m_LocalPosition: {x: 6.09, y: 3, z: 6.19}
+  m_LocalPosition: {x: -0.2, y: 11.4, z: -13.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1880,6 +1936,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1495509935}
     m_Modifications:
+    - target: {fileID: 4006552447536075706, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4709702488789299673, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1928,6 +1988,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green fence (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5338993003513998179, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338993003513998179, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
 --- !u!1 &1384639816
@@ -1946,7 +2014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1384639817
 Light:
   m_ObjectHideFlags: 0
@@ -2251,8 +2319,8 @@ MonoBehaviour:
   PlayerSide: 0
   PlayerBonus: 0
   rotateSpeed: 10
-  moveForwardSpeed: 5
-  moveDownSpeed: 5
+  moveForwardSpeed: 10
+  moveDownSpeed: 7
   jumpForce: 7
   gameController: {fileID: 56037521}
   wheelBody: {fileID: 486391807}
@@ -2376,7 +2444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1706429264
 Transform:
   m_ObjectHideFlags: 0
@@ -2409,7 +2477,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1706429263}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f6cff91d87bc6642b1af72889923258, type: 3}
   m_Name: 
@@ -2775,6 +2843,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bus#1
       objectReference: {fileID: 0}
+    - target: {fileID: 949794234860024447, guid: a4c21f3d2aea18c4b9071f46c72ff366, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8116492801835322022, guid: a4c21f3d2aea18c4b9071f46c72ff366, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4c21f3d2aea18c4b9071f46c72ff366, type: 3}
 --- !u!4 &328118864918113934 stripped
@@ -2929,6 +3005,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car#4
       objectReference: {fileID: 0}
+    - target: {fileID: 2157191136354513135, guid: 8db72684a2b84e943827902b9f5c420e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6945159791537506358, guid: 8db72684a2b84e943827902b9f5c420e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8db72684a2b84e943827902b9f5c420e, type: 3}
 --- !u!1001 &2292893480542235190
@@ -2941,6 +3025,10 @@ PrefabInstance:
     - target: {fileID: 2636111602533527568, guid: 54cbd6937a8c074498773365e9bcc9b7, type: 3}
       propertyPath: m_Name
       value: Car#2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2636111602533527568, guid: 54cbd6937a8c074498773365e9bcc9b7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3449345159638788778, guid: 54cbd6937a8c074498773365e9bcc9b7, type: 3}
       propertyPath: m_RootOrder
@@ -2986,6 +3074,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6420042250107521225, guid: 54cbd6937a8c074498773365e9bcc9b7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54cbd6937a8c074498773365e9bcc9b7, type: 3}
 --- !u!1001 &2500077425065094602
@@ -2995,6 +3087,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1495509935}
     m_Modifications:
+    - target: {fileID: 4006552447536075706, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4709702488789299673, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3043,6 +3139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green fence
       objectReference: {fileID: 0}
+    - target: {fileID: 5338993003513998179, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 335140544212f104fb80ca1a302bf0b2, type: 3}
 --- !u!1001 &2974692963608987001
@@ -3052,9 +3152,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1643126668}
     m_Modifications:
+    - target: {fileID: 2704783953342111350, guid: 4a4d2f08ad4045748bf3e89f0d4ef972, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2974692964069620358, guid: 4a4d2f08ad4045748bf3e89f0d4ef972, type: 3}
       propertyPath: m_Name
       value: Wheel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974692964069620358, guid: 4a4d2f08ad4045748bf3e89f0d4ef972, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2974692964069623161, guid: 4a4d2f08ad4045748bf3e89f0d4ef972, type: 3}
       propertyPath: m_RootOrder
@@ -3098,6 +3206,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2974692964069623161, guid: 4a4d2f08ad4045748bf3e89f0d4ef972, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6342362729168332463, guid: 4a4d2f08ad4045748bf3e89f0d4ef972, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -3165,6 +3277,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car#3
       objectReference: {fileID: 0}
+    - target: {fileID: 4065300650509110564, guid: 8a7fdf021bcb7464684d5a180fc98b5c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037015080661808637, guid: 8a7fdf021bcb7464684d5a180fc98b5c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a7fdf021bcb7464684d5a180fc98b5c, type: 3}
 --- !u!1001 &4366854775719681989
@@ -3177,6 +3297,10 @@ PrefabInstance:
     - target: {fileID: 3484456362882386207, guid: b08dea899a5e02a478344d8dffc2a0a9, type: 3}
       propertyPath: m_Name
       value: Truck#2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3484456362882386207, guid: b08dea899a5e02a478344d8dffc2a0a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4256066803756962725, guid: b08dea899a5e02a478344d8dffc2a0a9, type: 3}
       propertyPath: m_RootOrder
@@ -3220,6 +3344,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4256066803756962725, guid: b08dea899a5e02a478344d8dffc2a0a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5608825939067089350, guid: b08dea899a5e02a478344d8dffc2a0a9, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3300,6 +3428,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car#5
       objectReference: {fileID: 0}
+    - target: {fileID: 3673828490759917481, guid: d2983f832ed86cc469beaa24a320c2d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4159038112514970899, guid: d2983f832ed86cc469beaa24a320c2d8, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3344,6 +3476,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5724572571187754864, guid: d2983f832ed86cc469beaa24a320c2d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2983f832ed86cc469beaa24a320c2d8, type: 3}
 --- !u!1001 &4938939853052829579
@@ -3353,6 +3489,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1706429264}
     m_Modifications:
+    - target: {fileID: 3874786252610842452, guid: ba3dcdbb1d9ff76448a5aba56b6512e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4827888340860439863, guid: ba3dcdbb1d9ff76448a5aba56b6512e0, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -3401,6 +3541,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car#7
       objectReference: {fileID: 0}
+    - target: {fileID: 5209479982787385229, guid: ba3dcdbb1d9ff76448a5aba56b6512e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba3dcdbb1d9ff76448a5aba56b6512e0, type: 3}
 --- !u!1001 &7303994347725365653
@@ -3410,6 +3554,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1706429264}
     m_Modifications:
+    - target: {fileID: 1663707583044578680, guid: ab18a36ac52268a41b3e1a61b70b4a1b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7048334042175754011, guid: ab18a36ac52268a41b3e1a61b70b4a1b, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -3458,6 +3606,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Truck#1
       objectReference: {fileID: 0}
+    - target: {fileID: 7681846680741582241, guid: ab18a36ac52268a41b3e1a61b70b4a1b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab18a36ac52268a41b3e1a61b70b4a1b, type: 3}
 --- !u!1001 &7839941273353101000
@@ -3467,9 +3619,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1706429264}
     m_Modifications:
+    - target: {fileID: 2126177574831819753, guid: 1ac69af56849c6f4bb9358db40c4d187, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6921039618156786480, guid: 1ac69af56849c6f4bb9358db40c4d187, type: 3}
       propertyPath: m_Name
       value: Car#1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921039618156786480, guid: 1ac69af56849c6f4bb9358db40c4d187, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7730332491207387530, guid: 1ac69af56849c6f4bb9358db40c4d187, type: 3}
       propertyPath: m_RootOrder

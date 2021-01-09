@@ -125,7 +125,7 @@ public class WheelController : MonoBehaviour
     private void MoveTo()
     {
         transform.position = new Vector3(
-            Mathf.Lerp(transform.position.x, pointToMove, 0.1f),
+            Mathf.Lerp(transform.position.x, pointToMove, 0.2f),
             transform.position.y,
             transform.position.z);
     }
