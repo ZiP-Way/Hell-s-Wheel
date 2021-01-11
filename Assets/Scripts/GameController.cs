@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject loseMenu;
     [SerializeField] private Text score;
 
+    private int amountOfCoins;
+
     private void Start()
     {
         Screen.fullScreen = false;
@@ -21,8 +23,9 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    public void ScoreUpdate(int amountOfCoins)
+    public void ScoreUpdate()
     {
+        amountOfCoins++;
         score.text = amountOfCoins.ToString();
     }
 

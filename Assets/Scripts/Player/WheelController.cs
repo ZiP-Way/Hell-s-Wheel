@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Side { Left, Middle, Right }
 
@@ -8,8 +9,7 @@ public enum PlayerBonus { Deffault, Magnet }
 
 public class WheelController : MonoBehaviour
 {
-    // 2.65, 0.25, -2.15
-    [HideInInspector] public Side PlayerSide; // -1.6 -0.1 1.4
+    [HideInInspector] public Side PlayerSide;
     [HideInInspector] public PlayerBonus PlayerBonus;
 
     [SerializeField] private float rotateSpeed = 0;
@@ -17,25 +17,38 @@ public class WheelController : MonoBehaviour
     [SerializeField] private float moveDownSpeed = 0;
     [SerializeField] private float jumpForce = 0;
 
-    [SerializeField] private GameObject gameController;
-    [SerializeField] private GameObject wheelBody;
+    [SerializeField] private float damageRestoreTimer = 2f;
 
-    private float[] sidePositionX = {2.65f, 0.25f, -2.15f }; // 0 = Right side, 1 = Middle side, 2 = Left side
-    private Rigidbody rb;
+    [SerializeField] private GameController gameController;
+    [SerializeField] private GameObject wheelBody;
+    [SerializeField] private GameObject man;
+
+    private float[] sidePositionX = { 2.65f, 0.25f, -2.15f }; // 0 = Right side, 1 = Middle side, 2 = Left side
+    private Rigidbody rigidbody;
 
     private float codeTimer;
     private float pointToMove;
 
     private bool isChangingSide = false;
+    private bool isDamageReceived = false;
 
+    private float savedLastPosition;
+    private Side savedLastPlayerSide;
     private void Start()
     {
-        codeTimer   = 1f;
+        rigidbody = GetComponent<Rigidbody>();
 
-        rb          = GetComponent<Rigidbody>();
-        PlayerSide  = Side.Right;
+        codeTimer = 1f;
+
+        PlayerSide = Side.Right;
+        pointToMove = sidePositionX[0];
+
+        savedLastPosition = pointToMove;
+        savedLastPlayerSide = PlayerSide;
+
+        TakeDamage();
     }
-    
+
     private void FixedUpdate()
     {
         if (isChangingSide)
@@ -51,9 +64,21 @@ public class WheelController : MonoBehaviour
             }
         }
 
+        if (isDamageReceived)
+        {
+            damageRestoreTimer -= Time.deltaTime;
+            //wheelBody.transform.Rotate(Mathf.Lerp(wheelBody.transform.rotation.x, -5, 0.3f), wheelBody.transform.rotation.y, wheelBody.transform.rotation.z);
+
+            if (damageRestoreTimer < 0)
+            {
+                isDamageReceived = false;
+                man.GetComponent<ManController>().IsRunningFaster = false;
+            }
+        }
+
         if (IsGrounded())
         {
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, moveForwardSpeed);
+            rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, moveForwardSpeed);
         }
 
         wheelBody.transform.Rotate(Vector3.forward * rotateSpeed);
@@ -65,15 +90,24 @@ public class WheelController : MonoBehaviour
         {
             pointToMove = sidePositionX[1];
             PlayerSide = Side.Middle;
+
+            savedLastPlayerSide = Side.Left;
+            savedLastPosition = sidePositionX[2];
         }
         else if (PlayerSide == Side.Middle)
         {
             pointToMove = sidePositionX[0];
             PlayerSide = Side.Right;
+
+            savedLastPlayerSide = Side.Middle;
+            savedLastPosition = sidePositionX[1];
         }
         else if (PlayerSide == Side.Right)
         {
-            //...
+            savedLastPlayerSide = Side.Right;
+            savedLastPosition = sidePositionX[0];
+
+            TakeDamage();
         }
 
         codeTimer = 1f;
@@ -86,18 +120,27 @@ public class WheelController : MonoBehaviour
         {
             pointToMove = sidePositionX[2];
             PlayerSide = Side.Left;
+
+            savedLastPlayerSide = Side.Middle;
+            savedLastPosition = sidePositionX[1];
         }
         else if (PlayerSide == Side.Right)
         {
             pointToMove = sidePositionX[1];
             PlayerSide = Side.Middle;
+
+            savedLastPlayerSide = Side.Right;
+            savedLastPosition = sidePositionX[0];
         }
         else if (PlayerSide == Side.Left)
         {
-            // ...
+            savedLastPlayerSide = Side.Left;
+            savedLastPosition = sidePositionX[2];
+
+            TakeDamage();
         }
 
-        codeTimer = 1f; 
+        codeTimer = 1f;
         isChangingSide = true;
     }
 
@@ -105,7 +148,7 @@ public class WheelController : MonoBehaviour
     {
         if (IsGrounded())
         {
-            rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+            rigidbody.velocity = new Vector3(rigidbody.velocity.x, jumpForce, rigidbody.velocity.z);
         }
     }
 
@@ -113,7 +156,27 @@ public class WheelController : MonoBehaviour
     {
         if (!IsGrounded())
         {
-            rb.velocity = new Vector3(rb.velocity.x, -moveDownSpeed, rb.velocity.z);
+            rigidbody.velocity = new Vector3(rigidbody.velocity.x, -moveDownSpeed, rigidbody.velocity.z);
+        }
+    }
+
+    public void TakeDamage()
+    {
+        if (!isDamageReceived)
+        {
+            isDamageReceived = true;
+            damageRestoreTimer = 5f;
+
+            isChangingSide = true;
+            codeTimer = 1f;
+
+            PlayerSide = savedLastPlayerSide;
+            pointToMove = savedLastPosition;
+            man.GetComponent<ManController>().IsRunningFaster = true;
+        }
+        else
+        {
+            gameController.OnEnableLoseMenu();
         }
     }
 

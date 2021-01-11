@@ -5,13 +5,8 @@ using UnityEngine;
 public class BonusController : MonoBehaviour
 {
     [SerializeField] private GameObject gameController;
-
     [SerializeField] private GameObject magnetCollider;
-
     [SerializeField] private float timeToDisableMagnet;
-
-    private int coinCount = 0;
-    private float timer = 0;
 
     protected GameObject player;
 
@@ -20,31 +15,21 @@ public class BonusController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void FixedUpdate()
+    private void OnTriggerEnter(Collider other)
     {
-        if (magnetCollider.activeSelf)
+        if (other.CompareTag("Magnet"))
         {
-            timer -= Time.deltaTime;
-            if(timer <= 0)
-            {
-                magnetCollider.SetActive(false);
-            }
+            StartCoroutine(TimerToDisable(timeToDisableMagnet));
+            Destroy(other.gameObject);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private IEnumerator TimerToDisable(float seconds)
     {
-        if (other.CompareTag("Coin"))
-        {
-            coinCount++;
-            gameController.GetComponent<GameController>().ScoreUpdate(coinCount);
-            Destroy(other.gameObject);
-        }
-        else if (other.CompareTag("Magnet"))
-        {
-            timer = timeToDisableMagnet;
-            magnetCollider.SetActive(true);
-            Destroy(other.gameObject);
-        }
+        magnetCollider.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(seconds);
+
+        magnetCollider.SetActive(false);
     }
 }
