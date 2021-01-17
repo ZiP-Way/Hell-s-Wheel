@@ -4,32 +4,47 @@ using UnityEngine;
 
 public class BonusController : MonoBehaviour
 {
+    [SerializeField] protected GameObject player;
+    protected WheelController wheelControllerScript;
+
     [SerializeField] private GameObject gameController;
     [SerializeField] private GameObject magnetCollider;
-    [SerializeField] private float timeToDisableMagnet;
 
-    protected GameObject player;
+    [SerializeField] private float timeToDisableMagnet;
+    [SerializeField] private float timeToDisableSpeedBoost;
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        wheelControllerScript = player.GetComponent<WheelController>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Magnet"))
         {
-            StartCoroutine(TimerToDisable(timeToDisableMagnet));
+            StartCoroutine(TimerToDisableMg(timeToDisableMagnet));
+            Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("SpeedBoost"))
+        {
+            StartCoroutine(TimerToDisableSB(timeToDisableSpeedBoost));
             Destroy(other.gameObject);
         }
     }
 
-    private IEnumerator TimerToDisable(float seconds)
+    private IEnumerator TimerToDisableMg(float waitTime)
     {
         magnetCollider.SetActive(true);
-
-        yield return new WaitForSecondsRealtime(seconds);
-
+        yield return new WaitForSecondsRealtime(waitTime);
         magnetCollider.SetActive(false);
+    }
+
+    private IEnumerator TimerToDisableSB(float waitTime)
+    {
+        player.GetComponent<WheelController>().PlayerBonusStatus = PlayerBonus.SpeedBoost;
+        wheelControllerScript.MoveFowardSpeed += 5; 
+        yield return new WaitForSecondsRealtime(waitTime);
+        wheelControllerScript.MoveFowardSpeed -= 5;
+        player.GetComponent<WheelController>().PlayerBonusStatus = PlayerBonus.Default;
     }
 }

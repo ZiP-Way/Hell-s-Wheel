@@ -1,16 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-
+﻿using UnityEngine;
 public enum Side { Left, Middle, Right }
-
-public enum PlayerBonus { Deffault, Magnet }
+public enum PlayerBonus { Default, Magnet, SpeedBoost}
 
 public class WheelController : MonoBehaviour
 {
+    public float MoveFowardSpeed {
+        get
+        {
+            return moveForwardSpeed;
+        }
+        set
+        {
+            moveForwardSpeed = value;
+        } 
+    }
+
     [HideInInspector] public Side PlayerSide;
-    [HideInInspector] public PlayerBonus PlayerBonus;
+    [HideInInspector] public PlayerBonus PlayerBonusStatus;
 
     [SerializeField] private float rotateSpeed = 0;
     [SerializeField] private float moveForwardSpeed = 0;
@@ -33,7 +39,7 @@ public class WheelController : MonoBehaviour
     private bool isDamageReceived = false;
 
     private float savedLastPosition;
-    private Side savedLastPlayerSide;
+    [HideInInspector] public Side SavedLastPlayerSide;
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -44,7 +50,7 @@ public class WheelController : MonoBehaviour
         pointToMove = sidePositionX[0];
 
         savedLastPosition = pointToMove;
-        savedLastPlayerSide = PlayerSide;
+        SavedLastPlayerSide = PlayerSide;
 
         TakeDamage();
     }
@@ -91,7 +97,7 @@ public class WheelController : MonoBehaviour
             pointToMove = sidePositionX[1];
             PlayerSide = Side.Middle;
 
-            savedLastPlayerSide = Side.Left;
+            SavedLastPlayerSide = Side.Left;
             savedLastPosition = sidePositionX[2];
         }
         else if (PlayerSide == Side.Middle)
@@ -99,12 +105,12 @@ public class WheelController : MonoBehaviour
             pointToMove = sidePositionX[0];
             PlayerSide = Side.Right;
 
-            savedLastPlayerSide = Side.Middle;
+            SavedLastPlayerSide = Side.Middle;
             savedLastPosition = sidePositionX[1];
         }
         else if (PlayerSide == Side.Right)
         {
-            savedLastPlayerSide = Side.Right;
+            SavedLastPlayerSide = Side.Right;
             savedLastPosition = sidePositionX[0];
 
             TakeDamage();
@@ -121,7 +127,7 @@ public class WheelController : MonoBehaviour
             pointToMove = sidePositionX[2];
             PlayerSide = Side.Left;
 
-            savedLastPlayerSide = Side.Middle;
+            SavedLastPlayerSide = Side.Middle;
             savedLastPosition = sidePositionX[1];
         }
         else if (PlayerSide == Side.Right)
@@ -129,12 +135,12 @@ public class WheelController : MonoBehaviour
             pointToMove = sidePositionX[1];
             PlayerSide = Side.Middle;
 
-            savedLastPlayerSide = Side.Right;
+            SavedLastPlayerSide = Side.Right;
             savedLastPosition = sidePositionX[0];
         }
         else if (PlayerSide == Side.Left)
         {
-            savedLastPlayerSide = Side.Left;
+            SavedLastPlayerSide = Side.Left;
             savedLastPosition = sidePositionX[2];
 
             TakeDamage();
@@ -170,7 +176,7 @@ public class WheelController : MonoBehaviour
             isChangingSide = true;
             codeTimer = 1f;
 
-            PlayerSide = savedLastPlayerSide;
+            PlayerSide = SavedLastPlayerSide;
             pointToMove = savedLastPosition;
             man.GetComponent<ManController>().IsRunningFaster = true;
         }

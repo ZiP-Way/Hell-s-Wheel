@@ -12,17 +12,17 @@ public class Camera : MonoBehaviour
     {
         if (player.GetComponent<WheelController>().PlayerSide == Side.Right)
         {
-            transform.position = new Vector3(Mathf.Lerp(transform.position.x, 1.6f, cameraSpeed), transform.position.y, player.transform.position.z - 2.7f);
+            transform.position = new Vector3(Mathf.Lerp(transform.position.x, 1.6f, cameraSpeed), Mathf.Lerp(transform.position.y, player.transform.position.y + 3.5f, cameraSpeed), player.transform.position.z - 3f);
         }
         else if (player.GetComponent<WheelController>().PlayerSide == Side.Left)
         {
-            transform.position = new Vector3(Mathf.Lerp(transform.position.x, -0.9f, cameraSpeed), transform.position.y, player.transform.position.z - 2.7f);
+            transform.position = new Vector3(Mathf.Lerp(transform.position.x, -0.9f, cameraSpeed), Mathf.Lerp(transform.position.y, player.transform.position.y + 3.5f, cameraSpeed), player.transform.position.z - 3f);
         }
         else if (player.GetComponent<WheelController>().PlayerSide == Side.Middle)
         {
-            transform.position = new Vector3(Mathf.Lerp(transform.position.x, 0.25f, cameraSpeed), transform.position.y, player.transform.position.z - 2.7f);
+            transform.position = new Vector3(Mathf.Lerp(transform.position.x, 0.25f, cameraSpeed), Mathf.Lerp(transform.position.y, player.transform.position.y + 3.5f, cameraSpeed), player.transform.position.z - 3f);
         }
 
-        transform.position = new Vector3(transform.position.x, transform.position.y, player.transform.position.z - 3f);
+        //transform.position = new Vector3(transform.position.x, transform.position.y, player.transform.position.z - 3f);
     }
 }

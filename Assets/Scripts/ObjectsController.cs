@@ -27,7 +27,7 @@ public class ObjectsController : MonoBehaviour
         }
         else if (other.CompareTag("Car"))
         {
-            other.transform.position += new Vector3(0,0,50);
+            other.transform.position += new Vector3(0,0,100);
         }
     }
 }

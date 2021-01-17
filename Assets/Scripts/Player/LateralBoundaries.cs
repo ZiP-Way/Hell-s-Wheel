@@ -2,20 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LateralBoundaries : MonoBehaviour
+public class LateralBoundaries : LoseSystem
 {
-    private WheelController wheelController;
-
-    private void Start()
-    {
-        wheelController = GameObject.FindGameObjectWithTag("Player").GetComponent<WheelController>();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Car"))
+        if (other.CompareTag("Car") && wheelController.PlayerBonusStatus != PlayerBonus.SpeedBoost)
         {
             wheelController.TakeDamage();
+        }
+        else if(wheelController.PlayerBonusStatus == PlayerBonus.SpeedBoost)
+        {
+            Debug.Log("hi");
         }
     }
 }

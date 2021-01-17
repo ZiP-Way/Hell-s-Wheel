@@ -92,6 +92,8 @@ GameObject:
   - component: {fileID: 7048334042175754011}
   - component: {fileID: 3139791025815300610}
   - component: {fileID: 5023708032004279230}
+  - component: {fileID: 2704798531423854192}
+  - component: {fileID: 6058872890822607456}
   m_Layer: 0
   m_Name: Truck#1
   m_TagString: Car
@@ -108,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 7681846680741582241}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.5325158, y: -6.5768642, z: 50.87529}
-  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.40000004}
+  m_LocalScale: {x: 0.40000007, y: 0.4, z: 0.40000007}
   m_Children:
   - {fileID: 7611226603332369987}
   m_Father: {fileID: 0}
@@ -125,8 +127,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.514192, y: 1.4419997, z: 5.414511}
-  m_Center: {x: 6.8919826, y: 5.718004, z: 0.19552617}
+  m_Size: {x: 11.514191, y: 1.4419997, z: 4.977216}
+  m_Center: {x: 6.8919835, y: 5.718004, z: -0.023121532}
 --- !u!65 &5023708032004279230
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -138,5 +140,33 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.3765473, y: 4.82378, z: 5.3518577}
-  m_Center: {x: 10.014107, y: 8.879402, z: 0.1581615}
+  m_Size: {x: 5.376549, y: 4.8237796, z: 4.9456277}
+  m_Center: {x: 10.014107, y: 8.879402, z: -0.044952255}
+--- !u!114 &2704798531423854192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7681846680741582241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed1824ce1d18a047af300e29bad2e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &6058872890822607456
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7681846680741582241}
+  serializedVersion: 2
+  m_Mass: 5
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

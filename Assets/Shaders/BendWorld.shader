@@ -11,6 +11,7 @@
 			LOD 200
 
 			CGPROGRAM
+
 			#pragma surface surf Lambert vertex:vert addshadow
 			uniform sampler2D _MainTex;
 			uniform float _Curvature;
@@ -35,7 +36,8 @@
 				o.Albedo = c.rgb;
 				o.Alpha = c.a;
 			}
-		ENDCG
+
+			ENDCG
 		}
-			FallBack "Mobile/Diffuse"
+		FallBack "Mobile/Diffuse"
 }
